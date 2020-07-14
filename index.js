@@ -26,25 +26,26 @@ for ( var i = 0; i < buttonLimit; i++ ) {
   //Check for div moniker on current element
   //Set sound file
 
-if ( currObj === '<button class=​"w drum">​w​</button>'​ ) { soundUrl = "sounds/tom-1.mp3"; }
+
+  if (currObj === '<button class=​"w drum">​w​</button>') { soundUrl = "sounds/tom-1.mp3"; }
 
 
-if ( currObj === '<button class=​"a drum">​a</button>'​ ) { soundUrl = "sounds/tom-2.mp3"; }
+  if (currObj === '<button class=​"a drum">​a</button>') { soundUrl = "sounds/tom-2.mp3"; }
 
 
-if (  currObj === '<button class=​"s drum">​s</button>'​ ) { soundUrl = "sounds/tom-3.mp3"; }
+  if (currObj === '<button class=​"s drum">​s</button>') { soundUrl = "sounds/tom-3.mp3"; }
 
 
-if ( currObj === '<button class=​"d drum">​d</button>'​ ) { soundUrl = "sounds/tom-4.mp3"; }
+  if (currObj === '<button class=​"d drum">​d</button>') { soundUrl = "sounds/tom-4.mp3"; }
 
 
-if ( currObj === '<button class=​"j drum">​j​</button>'​ ) { soundUrl = "sounds/crash.mp3"; }
+  if (currObj === '<button class=​"j drum">​j​</button>') { soundUrl = "sounds/crash.mp3"; }
 
 
-if ( currObj === '<button class=​"k drum">​k​</button>'​ ) { soundUrl = "sounds/kick-bass.mp3"; }
+  if (currObj === '<button class=​"k drum">​k​</button>') { soundUrl = "sounds/kick-bass.mp3"; }
 
 
-if ( currObj === '<button class=​"l drum">​l​</button>'​ ) { soundUrl = "sounds/snare.mp3"; }
+  if (currObj === '<button class=​"l drum">​l​</button>') { soundUrl = "sounds/snare.mp3"; }
 
 
   //Listen for click on cuurent element
