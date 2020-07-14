@@ -2,42 +2,28 @@ var eventObjects = document.querySelectorAll(".drum");//array of elements with t
 var buttonLimit = eventObjects.length;
 var soundUrl = "";
 
-function playSound(soundUrl) {
+function playSound(index) {
+  var soundUrl = "";
+  var sounds = ["sounds/tom-1.mp3","sounds/tom-2.mp3","sounds/tom-3.mp3","sounds/tom-4.mp3","sounds/crash.mp3","sounds/kick-bass.mp3","sounds/snare.mp3"]
+
+  soundUrl = sounds(index);
   var sound = new Audio(soundUrl);//sounds
-  return sound.play();
+  sound.play();
 }
 
 function handleClick() {
-    playSound(soundUrl);
+  playSound(index);
 }//handleClick
 
 
 for ( var i = 0; i < buttonLimit; i++ ) {
 
-  var soundUrl = "";
-  var currObj = eventObjects[i];
 
+  var currObj = eventObjects[i];
+  var index = i;
+  console.log(`index: ${index}\n\relement: ${currObj}`);
   //Check for div moniker on current element
   //Set sound file
-  if ( i === 0 ) { soundUrl = "sounds/tom-1.mp3"; }//currObj === "button.w.drum" "button.w.drum"
-
-
-  if ( i === 1 ) { soundUrl = "sounds/tom-2.mp3"; }//currObj === "button.a.drum"
-
-
-  if ( i === 2 ) { soundUrl = "sounds/tom-3.mp3"; }//currObj === "button.s.drum"
-
-
-  if ( i === 3 ) { soundUrl = "sounds/tom-4.mp3"; }//currObj === "button.d.drum"
-
-
-  if ( i === 4  ) { soundUrl = "sounds/crash.mp3"; }//currObj === "button.j.drum"
-
-
-  if ( i === 5 ) { soundUrl = "sounds/kick-bass.mp3"; }//currObj === "button.k.drum"
-
-
-  if ( i === 6 ) { soundUrl = "sounds/snare.mp3"; }//currObj === "button.l.drum"
 
   //Listen for click on cuurent element
   currObj.addEventListener("click",handleClick);
