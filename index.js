@@ -29,40 +29,47 @@ for ( var i = 0; i < keyLimit; i++ ) {
         var sound1 = new Audio("sounds/tom-1.mp3");
         sound1.play();
       });
-
+      break;
     case ".a":
       document.querySelector(currObj).addEventListener("click", function() {
         var sound2 = new Audio("sounds/tom-2.mp3");
         sound2.play();
       });
+      break;
     case ".s":
-    document.querySelector(currObj).addEventListener("click", function() {
-      var sound3 = new Audio("sounds/tom-3.mp3");
-      sound3.play();
-    });
+      document.querySelector(currObj).addEventListener("click", function() {
+        var sound3 = new Audio("sounds/tom-3.mp3");
+        sound3.play();
+      });
+      break;
     case ".d":
-    document.querySelector(currObj).addEventListener("click", function() {
-      var sound4 = new Audio("sounds/tom-4.mp3");
-      sound4.play();
-    });
+      document.querySelector(currObj).addEventListener("click", function() {
+        var sound4 = new Audio("sounds/tom-4.mp3");
+        sound4.play();
+      });
+      break;
     case ".j":
-    document.querySelector(currObj).addEventListener("click", function() {
-      var sound5 = new Audio("sounds/crash.mp3");
-      sound5.play();
-    });
+      document.querySelector(currObj).addEventListener("click", function() {
+        var sound5 = new Audio("sounds/crash.mp3");
+        sound5.play();
+      });
+      break;
     case ".k":
-    document.querySelector(currObj).addEventListener("click", function() {
-      var sound6 = new Audio("sounds/kick-bass.mp3");
-      sound6.play();
-    });
+      document.querySelector(currObj).addEventListener("click", function() {
+        var sound6 = new Audio("sounds/kick-bass.mp3");
+        sound6.play();
+      });
+      break;
     case ".l":
-    document.querySelector(currObj).addEventListener("click", function() {
-      var sound7 = new Audio("sounds/snare.mp3");
-      sound7.play();
-    });
+      document.querySelector(currObj).addEventListener("click", function() {
+        var sound7 = new Audio("sounds/snare.mp3");
+        sound7.play();
+      });
+      break;
     default:
       console.log(`No ${currObj} HTML element.`);
   }//switch
+  
   //Listen for click on cuurent element
   //currObj.addEventListener("click",handleClick);
 }//for
