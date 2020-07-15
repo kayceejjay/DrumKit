@@ -1,6 +1,5 @@
 var eventObjects = document.querySelectorAll(".drum");//array of elements with the class drum
-var classKeys = [".w",".a",".s",".d",".j",".k",".l",]
-var keyLimit = classKeys.length;
+var buttonLimit = eventObjects.length;
 var soundUrl = "";
 
 function playSound(soundUrl) {
@@ -17,57 +16,40 @@ function handleClick() {
 }//handleClick
 
 
-for ( var i = 0; i < keyLimit; i++ ) {
+for ( var i = 0; i < buttonLimit; i++ ) {
 
 
-  var currObj = classKeys[i];
+  var currObj = eventObjects[i];
   var index = i;
   console.log(`index: ${index}\n\relement: ${currObj}`);
 
   //Check for div moniker on current element
   //Set sound file
 
-  switch (currObj) {
-    case ".w":
-      document.querySelector(currObj).addEventListener("click", function'() {
-        var sound = new Audio("sounds/tom-1.mp3");
-        sound.play();
-      });
 
-    case ".a":
-      document.querySelector(currObj).addEventListener("click", function'() {
-        var sound = new Audio("sounds/tom-2.mp3");
-        sound.play();
-      });
-    case ".s":
-    document.querySelector(currObj).addEventListener("click", function'() {
-      var sound = new Audio("sounds/tom-3.mp3");
-      sound.play();
-    });
-    case ".d":
-    document.querySelector(currObj).addEventListener("click", function'() {
-      var sound = new Audio("sounds/tom-4.mp3");
-      sound.play();
-    });
-    case ".j":
-    document.querySelector(currObj).addEventListener("click", function'() {
-      var sound = new Audio("sounds/crash.mp3");
-      sound.play();
-    });
-    case ".k":
-    document.querySelector(currObj).addEventListener("click", function'() {
-      var sound = new Audio("sounds/kick-bass.mp3");
-      sound.play();
-    });
-    case ".l":
-    document.querySelector(currObj).addEventListener("click", function'() {
-      var sound = new Audio("sounds/snare.mp3");
-      sound.play();
-    });
+  if (currObj === '<button class=​"w drum">​w​</button>') { soundUrl = "sounds/tom-1.mp3"; }
+
+
+  if (currObj === '<button class=​"a drum">​a</button>') { soundUrl = "sounds/tom-2.mp3"; }
+
+
+  if (currObj === '<button class=​"s drum">​s</button>') { soundUrl = "sounds/tom-3.mp3"; }
+
+
+  if (currObj === '<button class=​"d drum">​d</button>') { soundUrl = "sounds/tom-4.mp3"; }
+
+
+  if (currObj === '<button class=​"j drum">​j​</button>') { soundUrl = "sounds/crash.mp3"; }
+
+
+  if (currObj === '<button class=​"k drum">​k​</button>') { soundUrl = "sounds/kick-bass.mp3"; }
+
+
+  if (currObj === '<button class=​"l drum">​l​</button>') { soundUrl = "sounds/snare.mp3"; }
 
 
   //Listen for click on cuurent element
-  //currObj.addEventListener("click",handleClick);
+  currObj.addEventListener("click",handleClick);
 
 }//for
 
