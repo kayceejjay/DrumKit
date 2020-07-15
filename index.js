@@ -18,58 +18,53 @@ function handleClick() {
 
 
 for ( var i = 0; i < keyLimit; i++ ) {
-
   var currObj = classKeys[i];
   var index = i;
   console.log(`index: ${index}\n\relement: ${currObj}`);
-
   //Check for div moniker on current element
   //Set sound file
-
   switch (currObj) {
     case ".w":
       document.querySelector(currObj).addEventListener("click", function() {
-        var sound = new Audio("sounds/tom-1.mp3");
-        sound.play();
+        var sound1 = new Audio("sounds/tom-1.mp3");
+        sound1.play();
       });
 
     case ".a":
       document.querySelector(currObj).addEventListener("click", function() {
-        var sound = new Audio("sounds/tom-2.mp3");
-        sound.play();
+        var sound2 = new Audio("sounds/tom-2.mp3");
+        sound2.play();
       });
     case ".s":
     document.querySelector(currObj).addEventListener("click", function() {
-      var sound = new Audio("sounds/tom-3.mp3");
-      sound.play();
+      var sound3 = new Audio("sounds/tom-3.mp3");
+      sound3.play();
     });
     case ".d":
     document.querySelector(currObj).addEventListener("click", function() {
-      var sound = new Audio("sounds/tom-4.mp3");
-      sound.play();
+      var sound4 = new Audio("sounds/tom-4.mp3");
+      sound4.play();
     });
     case ".j":
     document.querySelector(currObj).addEventListener("click", function() {
-      var sound = new Audio("sounds/crash.mp3");
-      sound.play();
+      var sound5 = new Audio("sounds/crash.mp3");
+      sound5.play();
     });
     case ".k":
     document.querySelector(currObj).addEventListener("click", function() {
-      var sound = new Audio("sounds/kick-bass.mp3");
-      sound.play();
+      var sound6 = new Audio("sounds/kick-bass.mp3");
+      sound6.play();
     });
     case ".l":
     document.querySelector(currObj).addEventListener("click", function() {
-      var sound = new Audio("sounds/snare.mp3");
-      sound.play();
+      var sound7 = new Audio("sounds/snare.mp3");
+      sound7.play();
     });
     default:
       console.log(`No ${currObj} HTML element.`);
   }//switch
-
   //Listen for click on cuurent element
   //currObj.addEventListener("click",handleClick);
-
 }//for
 
 
