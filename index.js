@@ -64,7 +64,9 @@ for ( var i = 0; i < keyLimit; i++ ) {
       var sound = new Audio("sounds/snare.mp3");
       sound.play();
     });
-
+    default:
+      console.log(`No ${currObj} HTML element.`);
+  }//switch
 
   //Listen for click on cuurent element
   //currObj.addEventListener("click",handleClick);
