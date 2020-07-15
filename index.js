@@ -29,38 +29,38 @@ for ( var i = 0; i < keyLimit; i++ ) {
 
   switch (currObj) {
     case ".w":
-      document.querySelector(currObj).addEventListener("click", function'() {
+      document.querySelector(currObj).addEventListener("click", function() {
         var sound = new Audio("sounds/tom-1.mp3");
         sound.play();
       });
 
     case ".a":
-      document.querySelector(currObj).addEventListener("click", function'() {
+      document.querySelector(currObj).addEventListener("click", function() {
         var sound = new Audio("sounds/tom-2.mp3");
         sound.play();
       });
     case ".s":
-    document.querySelector(currObj).addEventListener("click", function'() {
+    document.querySelector(currObj).addEventListener("click", function() {
       var sound = new Audio("sounds/tom-3.mp3");
       sound.play();
     });
     case ".d":
-    document.querySelector(currObj).addEventListener("click", function'() {
+    document.querySelector(currObj).addEventListener("click", function() {
       var sound = new Audio("sounds/tom-4.mp3");
       sound.play();
     });
     case ".j":
-    document.querySelector(currObj).addEventListener("click", function'() {
+    document.querySelector(currObj).addEventListener("click", function() {
       var sound = new Audio("sounds/crash.mp3");
       sound.play();
     });
     case ".k":
-    document.querySelector(currObj).addEventListener("click", function'() {
+    document.querySelector(currObj).addEventListener("click", function() {
       var sound = new Audio("sounds/kick-bass.mp3");
       sound.play();
     });
     case ".l":
-    document.querySelector(currObj).addEventListener("click", function'() {
+    document.querySelector(currObj).addEventListener("click", function() {
       var sound = new Audio("sounds/snare.mp3");
       sound.play();
     });
