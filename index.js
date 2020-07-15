@@ -20,7 +20,7 @@ function handleClick() {
 for ( var i = 0; i < keyLimit; i++ ) {
   var currObj = classKeys[i];
   var index = i;
-  console.log(`index: ${index}\n\relement: ${currObj}`);
+  console.log(`index: ${index}\n\relement: ${document.querySelector(currObj)}`);
   //Check for div moniker on current element
   //Set sound file
   switch (currObj) {
