@@ -46,6 +46,6 @@ for ( var i = 0; i < keyLimit; i++ ) {
 
     }//switch
 
-  }//eventListener
+  });//eventListener
 
 }//for
