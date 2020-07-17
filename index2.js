@@ -1,9 +1,9 @@
-var  drumObj = document.querySelectorAll(".drum");
+var drumObj = document.querySelectorAll(".drum");
 var keyLimit = drumObj.length;
 
 for ( var i = 0; i < keyLimit; i++ ) {
 
-  drumObj.addEventListener("click", function() {
+  drumObj[i].addEventListener("click", function() {
 
     var buttonInnerHTML = this.innerHTML;
 
