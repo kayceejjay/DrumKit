@@ -12,6 +12,7 @@ for ( var i = 0; i < keyLimit; i++ ) {
 		case "w":
 			var tom1 = new Audio("sounds/tom-1.mp3");
 			tom1.play();
+      this.style.color = "white";
 			break;
 
 		case "a":
