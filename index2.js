@@ -3,7 +3,7 @@ var keyLimit = drumObj.length;
 
 for ( var i = 0; i < keyLimit; i++ ) {
 
-  document.querySelectorAll(".drum").addEventListener("click", function() {
+  drumObj.addEventListener("click", function() {
 
     var buttonInnerHTML = this.innerHTML;
 
