@@ -1,3 +1,6 @@
+var  drumObj = document.querySelectorAll(".drum");
+var keyLimit = drumObj.length;
+
 for ( var i = 0; i < keyLimit; i++ ) {
 
   document.querySelectorAll(".drum").addEventListener("click", function() {
