@@ -58,4 +58,6 @@ for ( var i = 0; i < keyLimit; i++ ) {
 
   });//eventListener
 
+  doucment.addEventListener("keydown", function() { alert("Key was pressed."); })
+
 }//for
