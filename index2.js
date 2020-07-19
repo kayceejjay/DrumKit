@@ -58,6 +58,8 @@ for ( var i = 0; i < keyLimit; i++ ) {
 
   });//eventListener
 
-  drumObj[i].addEventListener("keydown", function() { alert("Key was pressed.") });
+  //drumObj[i].addEventListener("keydown", function() { alert("Key was pressed.") });
 
 }//for
+
+document.addEventListener("keydown", function() { alert("Key was pressed.") });
