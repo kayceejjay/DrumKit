@@ -68,4 +68,6 @@ for ( var i = 0; i < keyLimit; i++ ) {
 
     focusObject(buttonInnerHTML);
 
+	}
+
 }//for
