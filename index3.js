@@ -11,7 +11,7 @@ function playSound(char) {
 		"l": "sounds/snare.mp3"
 	}
 
-	if sounds.includes(char) { sound = sounds.char }
+	if ( sounds.includes(char) ) { sound = sounds.char; }
 	else { console.log("${char} not found"); }
 	var soundToPlay = new Audio(sound);
 	soundToPlay.play();
