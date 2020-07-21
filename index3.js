@@ -22,7 +22,7 @@ function playSound(char) {
 } //playSound
 
 
-function focusObject(char) {
+function evenMonitor(char) {
 
   switch (char) {
 
@@ -59,18 +59,22 @@ function focusObject(char) {
 
   } //switch
 
-} //focusObject
+} //evenMonitor
 
 
 
 for (var i = 0; i < keyLimit; i++) {
 
+  //play sound on mouse click
   drumObj[i].addEventListener("click", function() {
 
       var buttonInnerHTML = this.innerHTML;
 
-      focusObject(buttonInnerHTML);
+      eventMonitor(buttonInnerHTML);
 
     };
 
-  } //for
+  //play sound on key entry
+  drumObj[i].addEventListener("keydown", function(event) { eventMonitor(event.key) });
+
+} //for
