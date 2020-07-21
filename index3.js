@@ -15,18 +15,18 @@ function playSound(char) {
     "l": "sounds/snare.mp3"
   }
 
-  if (sounds.includes(char)) {
+  if ( sounds.hasOwnProperty(char) ) {
     sound = sounds.char;
   } else {
     console.log("${char} not found");
   }
   var soundToPlay = new Audio(sound);
   soundToPlay.play();
-  this.style.color = "white";
+  //this.style.color = "white";
 } //playSound
 
 
-function evenMonitor(char) {
+function eventMonitor(char) {
 
   switch (char) {
 
