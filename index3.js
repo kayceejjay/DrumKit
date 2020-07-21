@@ -70,7 +70,7 @@ function evenMonitor(char) {
 for (var i = 0; i < keyLimit; i++) {
 
   //play sound on mouse click
-  drumObj[i].addEventListener("click", function() { var buttonInnerHTML = this.innerHTML; eventMonitor(buttonInnerHTML) };
+  drumObj[i].addEventListener("click", function() { var buttonInnerHTML = this.innerHTML; eventMonitor(buttonInnerHTML) });
 
   //play sound on key entry
   drumObj[i].addEventListener("keydown", function(event) { eventMonitor(event.key); });
