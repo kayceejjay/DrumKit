@@ -8,6 +8,7 @@ for ( i=0; i < numberOfDrumButtons; i++ ) {
     var buttonInnerHTML = this.innerHTML;
 
     playSound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
 
   });
 
@@ -17,6 +18,7 @@ for ( i=0; i < numberOfDrumButtons; i++ ) {
   document.querySelectorAll(".drum")[i].addEventListener("keydown",function(event) {
 
     playSound(event.key);
+    buttonAnimation(event.key);
 
   });
 
@@ -58,3 +60,13 @@ for ( i=0; i < numberOfDrumButtons; i++ ) {
     } //switch
 
   }//playSound
+
+  function buttonAnimation(currentKey) {
+    var classKey = `.${currentKey}`;
+
+    var activeButton = document.querySelector(classKey);
+    const onOff = () => {activeButton.classList.toggle("pressed")};
+
+    setTimeOut( function() { onOff(); },250 );
+
+  }//buttonAnimation
