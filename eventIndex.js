@@ -15,8 +15,8 @@ for ( i=0; i < numberOfDrumButtons; i++ ) {
 }//for
 
 
-  document.querySelectorAll(".drum")[i].addEventListener("keydown",function(event)) {
-
+  document.querySelectorAll(".drum")[i].addEventListener("keydown",function(event) {
+    //anonymous function
     playSound(event.key);
     buttonAnimation(event.key);
 
