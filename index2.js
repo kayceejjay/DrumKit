@@ -1,65 +1,92 @@
+//primary variables
 var drumObj = document.querySelectorAll(".drum");
 var keyLimit = drumObj.length;
 
-for ( var i = 0; i < keyLimit; i++ ) {
+//play a sound
+function playSound(char) {
 
-  drumObj[i].addEventListener("click", function() {
+  var sound;
+  var sounds = {
+    "w": "https://assets.codepen.io/2736276/tom-1.mp3",
+    "a": "https://assets.codepen.io/2736276/tom-2.mp3",
+    "s": "https://assets.codepen.io/2736276/tom-3.mp3",
+    "d": "https://assets.codepen.io/2736276/tom-4.mp3",
+    "j": "https://assets.codepen.io/2736276/crash.mp3",
+    "k": "https://assets.codepen.io/2736276/kick-bass.mp3",
+    "l": "https://assets.codepen.io/2736276/snare.mp3"
+  };
 
-    var buttonInnerHTML = this.innerHTML;
 
-    switch (buttonInnerHTML) {
+ Object.entries(sounds).forEach( ([key,value]) => {
 
-		case "w":
-			var tom1 = new Audio("sounds/tom-1.mp3");
-			tom1.play();
-      this.style.color = "white";
-			break;
+    if ( key === char ) {
+    	console.log(value);
+    	sound = value;
+    } else {
+      console.log("${char} not found");
+    }//if
 
-		case "a":
-			var tom2 = new Audio("sounds/tom-2.mp3");
-			tom2.play();
-      this.style.color = "white";
-			break;
+  });//for
 
-		case "s":
-			var tom3 = new Audio("sounds/tom-3.mp3");
-			tom3.play();
-      this.style.color = "white";
-			break;
+  var soundToPlay = new Audio(sound);
+  soundToPlay.play();
+  //var Obj = document.innerHTML = char;
+  //obj.style.color = "white";
+} //playSound
 
-		case "d":
-			var tom4 = new Audio("sounds/tom-4.mp3");
-			tom4.play();
-      this.style.color = "white";
-			break;
+//identify sound to play by char
+function eventMonitor(char) {
 
-		case "j":
-			var crash = new Audio("sounds/crash.mp3");
-			crash.play();
-      this.style.color = "white";
-			break;
+  switch (char) {
 
-		case "k":
-			var kickBass = new Audio("sounds/kick-bass.mp3");
-			kickBass.play();
-      this.style.color = "white";
-			break;
+    case "w":
+      playSound(char);
+      break;
 
-		case "l":
-			var snare = new Audio("sounds/snare.mp3");
-			snare.play();
-      this.style.color = "white";
-			break;
+    case "a":
+      playSound(char);
+      break;
 
-        default:
-			console.log(`No ${buttonInnerHTML} HTML element.`);
+    case "s":
+      playSound(char);
+      break;
 
-    }//switch
+    case "d":
+      playSound(char);
+      break;
 
-  });//eventListener
+    case "j":
+      playSound(char);
+      break;
 
-  //drumObj[i].addEventListener("keydown", function() { alert("Key was pressed.") });
+    case "k":
+      playSound(char);
+      break;
 
-}//for
+    case "l":
+      playSound(char);
+      break;
 
-document.addEventListener("keydown", function(event) { console.log(event); });
+    default:
+      console.log(`No ${char} HTML element.`);
+
+  } //switch
+
+} //evenMonitor
+
+
+//monitor user certain actions
+for (var i = 0; i < keyLimit; i++) {
+  var focusObj = drumObj[i];
+
+  //play sound on mouse click
+  focusObj.addEventListener("click", function() {var buttonInnerHTML = this.innerHTML; this.style.color = "white"; eventMonitor(buttonInnerHTML);
+    console.log(this.style.color);
+  });
+} //for
+
+
+//monitor the document & play sound on key entry
+document.addEventListener("keydown", function(event) {
+return eventMonitor(event.key);
+});
