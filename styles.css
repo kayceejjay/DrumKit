@@ -59,6 +59,10 @@ footer {
   opacity: 0.5;
 }
 
+.activate {
+  color: white !important;
+}
+
 .red {
   color: red;
 }
