@@ -2,6 +2,29 @@
 var drumObj = document.querySelectorAll(".drum");
 var keyLimit = drumObj.length;
 
+
+function animationOn(element) {
+   classList(element).add("activate").add("pressed");
+}
+
+
+function animationOff(element) {
+   classList(element).remove("activate").remove("pressed");
+}
+
+
+//animate the button
+function buttonAnimation(currentKey) {
+
+  var classKey = `.${currentKey}`;
+  var activeButton = document.querySelector(classKey);
+  //Toggle activate & deactivate pressed class
+  animationOn(activeButton);
+  setTimeout(function() { animationOff(activeButton); },250);
+
+}//buttonAnimation
+
+
 //play a sound
 function playSound(char) {
 
@@ -32,40 +55,6 @@ function playSound(char) {
   soundToPlay.play();
 
 } //playSound
-
-
-//animate the button
-function buttonAnimation(currentKey) {
-
-  var classKey = `.${currentKey}`;
-  var activeButton = document.querySelector(classKey);
-  //Toggle activate & deactivate pressed class
-  animationOn(activeButton);
-  setTimeout(function() { animationOff(activeButton); },250);
-
-}//buttonAnimation
-
-
-//add classes by chain
-function classList(element) {
-  var listOfClasses = element.classList;
-
-  return {
-      toggle: function(c) { listOfClasses.toggle(c); return this; },
-      add: function(c) { listOfClasses.add(c); return this; },
-      remove: function(c) { listOfClasses.remove(c); return this; }
-  };
-}//classList
-
-
-function animationOn(element) {
-   classList(element).add("activate").add("pressed");
-}
-
-
-function animationOff(element) {
-   classList(element).remove("activate").remove("pressed");
-}
 
 
 //identify sound to play by char
