@@ -59,12 +59,12 @@ function classList(element) {
 
 
 function animationOn(element) {
-   classList(element).add("pressed").add("activate");
+   classList(element).add("activate").add("pressed");
 }
 
 
 function animationOff(element) {
-   classList(element).remove("pressed").remove("activate");
+   classList(element).remove("activate").remove("pressed");
 }
 
 
