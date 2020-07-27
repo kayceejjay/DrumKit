@@ -48,11 +48,11 @@ function buttonAnimation(currentKey) {
 
 //add classes by chain
 function classList(element) {
- var listOfClasses = element.classList;
+  var listOfClasses = element.classList;
 
   return {
       toggle: function(c) { listOfClasses.toggle(c); return this; },
-      add:    function(c) { listOfClasses.add   (c); return this; },
+      add: function(c) { listOfClasses.add(c); return this; },
       remove: function(c) { listOfClasses.remove(c); return this; }
   };
 }//classList
