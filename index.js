@@ -1,105 +1,132 @@
-var eventObjects = document.querySelectorAll(".drum");//array of elements with the class drum
-var classKeys = [".w",".a",".s",".d",".j",".k",".l",]
-var keyLimit = classKeys.length;
-var soundUrl = "";
+//primary variables
+var drumObj = document.querySelectorAll(".drum");
+var keyLimit = drumObj.length;
 
-function playSound(soundUrl) {
-  //var soundUrl = "";
-  //var sounds = ["sounds/tom-1.mp3","sounds/tom-2.mp3","sounds/tom-3.mp3","sounds/tom-4.mp3","sounds/crash.mp3","sounds/kick-bass.mp3","sounds/snare.mp3"];
-  //soundUrl = sounds(index);
+//play a sound
+function playSound(char) {
 
-  var sound = new Audio(soundUrl);//sounds
-  sound.play();
+  var sound;
+  var sounds = {
+    "w": "https://assets.codepen.io/2736276/tom-1.mp3",
+    "a": "https://assets.codepen.io/2736276/tom-2.mp3",
+    "s": "https://assets.codepen.io/2736276/tom-3.mp3",
+    "d": "https://assets.codepen.io/2736276/tom-4.mp3",
+    "j": "https://assets.codepen.io/2736276/crash.mp3",
+    "k": "https://assets.codepen.io/2736276/kick-bass.mp3",
+    "l": "https://assets.codepen.io/2736276/snare.mp3"
+  };
+
+
+ Object.entries(sounds).forEach( ([key,value]) => {
+
+    if ( key === char ) {
+    	console.log(value);
+    	sound = value;
+    } else {
+      console.log("${char} not found");
+    }//if
+
+  });//for
+
+  var soundToPlay = new Audio(sound);
+  soundToPlay.play();
+
+} //playSound
+
+
+//animate the button
+function buttonAnimation(currentKey) {
+
+  var classKey = `.${currentKey}`;
+  var activeButton = document.querySelector(classKey);
+  //Toggle activate & deactivate pressed class
+  animationOn(activeButton);
+  setTimeout(function() { animationOff(activeButton); },250);
+
+}//buttonAnimation
+
+
+//add classes by chain
+function classList(element) {
+ var listOfClasses = element.classList;
+
+  return {
+      toggle: function(c) { listOfClasses.toggle(c); return this; },
+      add:    function(c) { listOfClasses.add   (c); return this; },
+      remove: function(c) { listOfClasses.remove(c); return this; }
+  };
+}//classList
+
+
+function animationOn(element) {
+   classList(element).add("pressed").add("activate");
 }
 
-function handleClick() {
-  playSound(index);
-}//handleClick
+
+function animationOff(element) {
+   classList(element).remove("pressed").remove("activate");
+}
 
 
-for ( var i = 0; i < keyLimit; i++ ) {
-  var currObj = classKeys[i];
-  var index = i;
-  console.log(`index: ${index}\n\relement: ${document.querySelector(currObj)}`);
-  //Check for div moniker on current element
-  //Set sound file
-  switch (currObj) {
-    case ".w":
-      document.querySelector(currObj).addEventListener("click", function() {
-        var sound1 = new Audio("sounds/tom-1.mp3");
-        sound1.play();
-      });
+//identify sound to play by char
+function eventMonitor(char) {
+
+  switch (char) {
+
+    case "w":
+      playSound(char);
+      buttonAnimation(char);
       break;
-    case ".a":
-      document.querySelector(currObj).addEventListener("click", function() {
-        var sound2 = new Audio("sounds/tom-2.mp3");
-        sound2.play();
-      });
+
+    case "a":
+      playSound(char);
+      buttonAnimation(char);
       break;
-    case ".s":
-      document.querySelector(currObj).addEventListener("click", function() {
-        var sound3 = new Audio("sounds/tom-3.mp3");
-        sound3.play();
-      });
+
+    case "s":
+      playSound(char);
+      buttonAnimation(char);
       break;
-    case ".d":
-      document.querySelector(currObj).addEventListener("click", function() {
-        var sound4 = new Audio("sounds/tom-4.mp3");
-        sound4.play();
-      });
+
+    case "d":
+      playSound(char);
+      buttonAnimation(char);
       break;
-    case ".j":
-      document.querySelector(currObj).addEventListener("click", function() {
-        var sound5 = new Audio("sounds/crash.mp3");
-        sound5.play();
-      });
+
+    case "j":
+      playSound(char);
+      buttonAnimation(char);
       break;
-    case ".k":
-      document.querySelector(currObj).addEventListener("click", function() {
-        var sound6 = new Audio("sounds/kick-bass.mp3");
-        sound6.play();
-      });
+
+    case "k":
+      playSound(char);
+      buttonAnimation(char);
       break;
-    case ".l":
-      document.querySelector(currObj).addEventListener("click", function() {
-        var sound7 = new Audio("sounds/snare.mp3");
-        sound7.play();
-      });
+
+    case "l":
+      playSound(char);
+      buttonAnimation(char);
       break;
+
     default:
-      console.log(`No ${currObj} HTML element.`);
-  }//switch
-  
-  //Listen for click on cuurent element
-  //currObj.addEventListener("click",handleClick);
-}//for
+      console.log(`No ${char} HTML element.`);
+
+  } //switch
+
+} //evenMonitor
 
 
-//Using anonymous function
-//eventObject.addEventListener("click", function () { alert("I got clicked!"); });
+//monitor user certain actions
+for (var i = 0; i < keyLimit; i++) {
+  var focusObj = drumObj[i];
 
-/*
-get an array of all buttons
-iterate through them
-For each button reached in the iteration
-run event listener
-*/
+  //play sound on mouse click
+  focusObj.addEventListener("click", function() {var buttonInnerHTML = this.innerHTML; eventMonitor(buttonInnerHTML);
+  });
+} //for
 
-/*
-var eventObjects = document.querySelectorAll("button");//array of button elements
-var objectOne = eventObjects[0];
-var objectTwo = eventObjects[1];
-var objectThree = eventObjects[2];
-var objectFour = eventObjects[3];
-var objectFive = eventObjects[4];
-var objectSix = eventObjects[5];
-var objectSeven = eventObjects[6];
 
-objectOne.addEventListener("click", handleClick);
-objectTwo.addEventListener("click", handleClick);
-objectThree.addEventListener("click", handleClick);
-objectFour.addEventListener("click", handleClick);
-objectFive.addEventListener("click", handleClick);
-objectSix.addEventListener("click", handleClick);
-objectSeven.addEventListener("click", handleClick);
-*/
+//monitor the document & play sound on key entry
+  document.addEventListener("keydown", function(event) {
+  return eventMonitor(event.key);
+});
